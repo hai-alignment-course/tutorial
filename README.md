@@ -7,6 +7,3 @@ The resources of the NeurIPS 2025 Tutorial on Human-AI Alignment include:
 - 4. **Relevant Materials**:
     - a. Coding Notebooks;
     - b. Exercises;
-
-
-The structure of the Human-AI Alignment:

@@ -1,6 +1,63 @@
-<!-- # Human-AI Alignment Tutorial -->
+# Human-AI Alignment Tutorial
 
+This is a React-based tutorial for Human-AI Alignment concepts, built with Vite.
 
+## Development
+
+To run the development server:
+
+```bash
+npm run dev
+```
+
+## Building for Production
+
+To build the project for production:
+
+```bash
+npm run build
+```
+
+## Deploying to GitHub Pages
+
+### Prerequisites
+
+1. Make sure you have the `gh-pages` package installed:
+   ```bash
+   npm install --save-dev gh-pages
+   ```
+
+2. Ensure your repository is connected to GitHub and you have the necessary permissions.
+
+### Deployment Steps
+
+1. **Build the project:**
+   ```bash
+   npm run build
+   ```
+
+2. **Deploy to GitHub Pages:**
+   ```bash
+   npm run deploy
+   ```
+
+   This will:
+   - Build the project (via the `predeploy` script)
+   - Deploy the contents of the `dist` folder to the `gh-pages` branch
+   - Make your site available at: https://hai-alignment-course.github.io/tutorial/
+
+### Configuration
+
+The project is configured for GitHub Pages with:
+- Base path: `/tutorial/` (set in `vite.config.js`)
+- Homepage: `https://hai-alignment-course.github.io/tutorial/` (set in `package.json`)
+- Build output directory: `dist` (Vite default)
+
+### Troubleshooting
+
+- If you get a 404 error, make sure GitHub Pages is enabled in your repository settings
+- The site may take a few minutes to become available after deployment
+- Check that the `gh-pages` branch was created in your repository
 
 <!-- # React + Vite
 

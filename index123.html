@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Human-AI Alignment</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .container {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        max-width: 800px;
+        width: 100%;
+        text-align: center;
+      }
+
+      h1 {
+        color: #2c3e50;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      p {
+        font-size: 1.1rem;
+        color: #555;
+        margin-bottom: 15px;
+        text-align: left;
+      }
+
+      ul {
+        list-style: none;
+        margin-top: 30px;
+        text-align: left;
+      }
+
+      li {
+        margin-bottom: 15px;
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 10px;
+        border-left: 4px solid #667eea;
+        transition: all 0.3s ease;
+      }
+
+      li:hover {
+        transform: translateX(5px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        background: #f0f2ff;
+      }
+
+      a {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        display: block;
+        transition: color 0.3s ease;
+      }
+
+      a:hover {
+        color: #764ba2;
+        text-decoration: underline;
+      }
+
+      .description {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+        border: 1px solid #e9ecef;
+      }
+
+      .resources-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #2c3e50;
+        margin: 30px 0 20px 0;
+        text-align: left;
+        border-bottom: 2px solid #667eea;
+        padding-bottom: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 20px;
+          margin: 10px;
+        }
+        
+        h1 {
+          font-size: 2rem;
+        }
+        
+        p {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- <script type="module" src="/src/main.jsx"></script> -->
+    <div class="container">
+      <h1>Human-AI Alignment Tutorial</h1>
+      
+      <div class="description">
+        <p>
+          This is a tutorial for the Tutorial on Human-AI Alignment.
+        </p>
+        <p>
+          The tutorial is designed to provide a comprehensive overview of the foundations, methods, practice, and challenges of Human-AI Alignment.
+        </p>
+      </div>
+
+      <div class="resources-title">📚 Tutorial Resources</div>
+      <ul>
+        <li>
+          <a href="https://hai-alignment-course.github.io/tutorial/slides/slides.pdf">📊 Slides</a>
+        </li>
+        <li>
+          <a href="https://hai-alignment-course.github.io/tutorial/video/video.mp4">🎥 Presentation Video Recordings</a>
+        </li>
+        <li>
+          <a href="https://hai-alignment-course.github.io/tutorial/notebooks/notebooks.pdf">💻 Coding Notebooks</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,153 +1,376 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Human-AI Alignment</title>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human-AI Alignment - NeurIPS 2025 Tutorial</title>
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles and Font -->
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.6;
-        color: #333;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-      }
-
-      .container {
-        background: white;
-        border-radius: 20px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        padding: 40px;
-        max-width: 800px;
-        width: 100%;
-        text-align: center;
-      }
-
-      h1 {
-        color: #2c3e50;
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-        font-weight: 700;
-        background: linear-gradient(135deg, #667eea, #764ba2);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      p {
-        font-size: 1.1rem;
-        color: #555;
-        margin-bottom: 15px;
-        text-align: left;
-      }
-
-      ul {
-        list-style: none;
-        margin-top: 30px;
-        text-align: left;
-      }
-
-      li {
-        margin-bottom: 15px;
-        padding: 15px;
-        background: #f8f9fa;
-        border-radius: 10px;
-        border-left: 4px solid #667eea;
-        transition: all 0.3s ease;
-      }
-
-      li:hover {
-        transform: translateX(5px);
-        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
-        background: #f0f2ff;
-      }
-
-      a {
-        color: #667eea;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1.1rem;
-        display: block;
-        transition: color 0.3s ease;
-      }
-
-      a:hover {
-        color: #764ba2;
-        text-decoration: underline;
-      }
-
-      .description {
-        background: #f8f9fa;
-        padding: 20px;
-        border-radius: 10px;
-        margin: 20px 0;
-        border: 1px solid #e9ecef;
-      }
-
-      .resources-title {
-        font-size: 1.3rem;
-        font-weight: 600;
-        color: #2c3e50;
-        margin: 30px 0 20px 0;
-        text-align: left;
-        border-bottom: 2px solid #667eea;
-        padding-bottom: 10px;
-      }
-
-      @media (max-width: 768px) {
-        .container {
-          padding: 20px;
-          margin: 10px;
-        }
+        /* Import Inter font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
         
-        h1 {
-          font-size: 2rem;
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Dark, starry-night-like gradient background */
+            background-color: #0f172a; /* fallback */
+            background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
         }
-        
-        p {
-          font-size: 1rem;
+
+        /* Custom class for the glass-morphism effect on cards */
+        .glass-card {
+            background-color: rgba(30, 41, 59, 0.5); /* bg-slate-800 with 50% opacity */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(51, 65, 85, 0.7); /* border-slate-700 with 70% opacity */
         }
-      }
     </style>
-  </head>
-  <body>
-    <div id="root"></div>
-    <!-- <script type="module" src="/src/main.jsx"></script> -->
-    <div class="container">
-      <h1>Human-AI Alignment Tutorial</h1>
-      
-      <div class="description">
-        <p>
-          This is a tutorial for the Tutorial on Human-AI Alignment.
-        </p>
-        <p>
-          The tutorial is designed to provide a comprehensive overview of the foundations, methods, practice, and challenges of Human-AI Alignment.
-        </p>
-      </div>
+</head>
+<body class="text-gray-200 antialiased">
 
-      <div class="resources-title">📚 Tutorial Resources</div>
-      <ul>
-        <li>
-          <a href="https://hai-alignment-course.github.io/tutorial/slides/slides.pdf">📊 Slides</a>
-        </li>
-        <li>
-          <a href="https://hai-alignment-course.github.io/tutorial/video/video.mp4">🎥 Presentation Video Recordings</a>
-        </li>
-        <li>
-          <a href="https://hai-alignment-course.github.io/tutorial/notebooks/notebooks.pdf">💻 Coding Notebooks</a>
-        </li>
-      </ul>
+    <!-- Main Container -->
+    <div class="container mx-auto max-w-6xl px-4 py-12 md:py-20">
+
+        <!-- Header Section -->
+        <header class="text-center mb-16 md:mb-20">
+            <span class="block text-base md:text-3xl font-semibold text-indigo-400 tracking-wide ">
+                NeurIPS 2025 Tutorial
+            </span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mt-3 leading-tight">
+                Human-AI Alignment
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mt-4 max-w-3xl mx-auto">
+                Foundations, Methods, Practice, and Challenges
+            </p>
+        </header>
+
+        <!-- Event Details Section -->
+        <section id="details" class="mb-16 md:mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Date -->
+                <div class="glass-card rounded-xl p-6 flex items-center space-x-4">
+                    <div class="flex-shrink-0">
+                        <svg class="w-8 h-8 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">Date</h3>
+                        <p class="text-gray-300">Tuesday, 02 December 2025</p>
+                    </div>
+                </div>
+                <!-- Time -->
+                <div class="glass-card rounded-xl p-6 flex items-center space-x-4">
+                    <div class="flex-shrink-0">
+                        <svg class="w-8 h-8 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">Time</h3>
+                        <p class="text-gray-300">09:30 AM – 12:00 PM PST</p>
+                    </div>
+                </div>
+                <!-- Location -->
+                <div class="glass-card rounded-xl p-6 flex items-center space-x-4">
+                    <div class="flex-shrink-0">
+                        <svg class="w-8 h-8 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">Location</h3>
+                        <p class="text-gray-300">Exhibit Hall F, San Diego Convention Center</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Outline Section -->
+        <section id="outline" class="mb-16 md:mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-10">
+                Tutorial Outline
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Foundations -->
+                <div class="glass-card rounded-xl p-6 text-center transition hover:bg-slate-700/70">
+                    <span class="text-5xl mb-4 block">🏛️</span>
+                    <h3 class="text-xl font-semibold text-white mb-2">Foundations</h3>
+                    <p class="text-gray-300">Preferences, Values, and Morals</p>
+                </div>
+                <!-- Methods -->
+                <div class="glass-card rounded-xl p-6 text-center transition hover:bg-slate-700/70">
+                    <span class="text-5xl mb-4 block">⚙️</span>
+                    <h3 class="text-xl font-semibold text-white mb-2">Methods</h3>
+                    <p class="text-gray-300">Specification & Alignment Methods</p>
+                </div>
+                <!-- Practice -->
+                <div class="glass-card rounded-xl p-6 text-center transition hover:bg-slate-700/70">
+                    <span class="text-5xl mb-4 block">🤝</span>
+                    <h3 class="text-xl font-semibold text-white mb-2">Practice</h3>
+                    <p class="text-gray-300">Sociotechnical Evaluation and Oversight</p>
+                </div>
+                <!-- Challenges (NEW) -->
+                <div class="glass-card rounded-xl p-6 text-center transition hover:bg-slate-700/70">
+                    <span class="text-5xl mb-4 block">⛰️</span>
+                    <h3 class="text-xl font-semibold text-white mb-2">Challenges</h3>
+                    <p class="text-gray-300">AI Safety & Extreme Risks</p>
+                </div>
+            </div>
+            <!-- End New Schedule Layout -->
+        </section>
+
+
+
+
+        <!-- Outline Section -->
+        <section id="outline" class="mb-16 md:mb-20">
+            <!-- <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-10">
+                Tutorial Outline
+            </h2> -->
+            <!-- New Schedule Layout -->
+            <div class="glass-card rounded-xl p-6 md:p-10">
+                <div class="flow-root">
+                    <ul role="list" class="-mb-8">
+                        <!-- PART I -->
+                        <li>
+                            <div class="relative pb-8">
+                                <span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-slate-600" aria-hidden="true"></span>
+                                <div class="relative flex space-x-4">
+                                    <div>
+                                        <span class="h-8 w-8 rounded-full bg-indigo-600 flex items-center justify-center ring-8 ring-slate-800">
+                                            <span class="text-sm font-semibold text-white">I</span>
+                                        </span>
+                                    </div>
+                                    <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
+                                        <div>
+                                            <p class="text-lg font-semibold text-white">Introduction <span style="color: #FECC66;">[Hua]</span></p>
+                                        </div>
+                                        <div class="whitespace-nowrap text-right text-sm text-gray-400">
+                                            <time>5 min</time>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- PART II -->
+                        <li>
+                            <div class="relative pb-8">
+                                <span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-slate-600" aria-hidden="true"></span>
+                                <div class="relative flex space-x-4">
+                                    <div>
+                                        <span class="h-8 w-8 rounded-full bg-indigo-600 flex items-center justify-center ring-8 ring-slate-800">
+                                            <span class="text-sm font-semibold text-white">II</span>
+                                        </span>
+                                    </div>
+                                    <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
+                                        <div>
+                                            <p class="text-lg font-semibold text-white">Human-in-the-loop AI Alignment <span style="color: #FECC66;">[Hua]</span><p>
+                                        </div>
+                                        <div class="whitespace-nowrap text-right text-sm text-gray-400">
+                                            <time>25 min</time>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- PART III -->
+                        <li>
+                            <div class="relative pb-8">
+                                <span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-slate-600" aria-hidden="true"></span>
+                                <div class="relative flex space-x-4">
+                                    <div>
+                                        <span class="h-8 w-8 rounded-full bg-indigo-600 flex items-center justify-center ring-8 ring-slate-800">
+                                            <span class="text-sm font-semibold text-white">III</span>
+                                        </span>
+                                    </div>
+                                    <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
+                                        <div>
+                                            <p class="text-lg font-semibold text-white">Pluralistic Value & Morality in LLMs <span style="color: #FECC66;">[Mitchell]</span></p>
+                                        </div>
+                                        <div class="whitespace-nowrap text-right text-sm text-gray-400">
+                                            <time>35 min</time>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- PART IV -->
+                        <li>
+                            <div class="relative pb-8">
+                                <span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-slate-600" aria-hidden="true"></span>
+                                <div class="relative flex space-x-4">
+                                    <div>
+                                        <span class="h-8 w-8 rounded-full bg-indigo-600 flex items-center justify-center ring-8 ring-slate-800">
+                                            <span class="text-sm font-semibold text-white">IV</span>
+                                        </span>
+                                    </div>
+                                    <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
+                                        <div>
+                                            <p class="text-lg font-semibold text-white">Sociotechnical Challenges and AI Safety <span style="color: #FECC66;">[Adam]</span></p>
+                                        </div>
+                                        <div class="whitespace-nowrap text-right text-sm text-gray-400">
+                                            <time>35 min</time>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- PART V -->
+                        <li>
+                            <div class="relative pb-8">
+                                <span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-slate-600" aria-hidden="true"></span>
+                                <div class="relative flex space-x-4">
+                                    <div>
+                                        <span class="h-8 w-8 rounded-full bg-indigo-600 flex items-center justify-center ring-8 ring-slate-800">
+                                            <span class="text-sm font-semibold text-white">V</span>
+                                        </span>
+                                    </div>
+                                    <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
+                                        <div>
+                                            <p class="text-lg font-semibold text-white">Extreme AI Risks and Open Problems <span style="color: #FECC66;">[Yoshua]</span></p>
+                                        </div>
+                                        <div class="whitespace-nowrap text-right text-sm text-gray-400">
+                                            <time>20 min</time>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- PANEL -->
+                        <li>
+                            <div class="relative">
+                                <div class="relative flex space-x-4">
+                                    <div>
+                                        <span class="h-8 w-8 rounded-full bg-teal-500 flex items-center justify-center ring-8 ring-slate-800">
+                                            <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.056 3 12s4.03 8.25 9 8.25Z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 12.75V17.25M12 8.25V9" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
+                                        <div>
+                                            <p class="text-lg font-semibold text-white">PANEL: Alignment Challenge & Prospects <span style="color: #FECC66;">[Yoshua, Dawn, Eric, Monojit, Hannah]</span> </p>
+                                        </div>
+                                        <div class="whitespace-nowrap text-right text-sm text-gray-400">
+                                            <time>30 min</time>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End New Schedule Layout -->
+        </section>
+
+
+        <!-- Profile Card Component (Helper) -->
+        <!-- This is a template for the cards below, not displayed itself -->
+        <template id="profile-card-template">
+            <div class="glass-card rounded-xl p-6 flex flex-col items-center text-center transition-all duration-300 hover:scale-105 hover:bg-slate-700/70">
+                <img class="w-32 h-32 rounded-full mb-4 border-4 border-slate-600 object-cover" src="" alt="">
+                <h3 class="text-xl font-bold text-white mb-1"></h3>
+                <p class="text-indigo-300 text-sm"></p>
+            </div>
+        </template>
+
+        <!-- Speakers Section -->
+        <section id="speakers" class="mb-16 md:mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-10">
+                Speakers
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
+                <!-- Speaker data is populated here -->
+                <a href="https://hua-shen.org/" target="_blank" class="glass-card rounded-xl p-6 flex flex-col items-center text-center transition-all duration-300 hover:scale-105 hover:bg-slate-700/70 block no-underline">
+                    <img class="w-32 h-32 rounded-full mb-4 border-4 border-slate-600 object-cover" src="src/assets/images/hua.png" alt="Headshot of Hua Shen">
+                    <h3 class="text-xl font-bold text-white mb-1">Hua Shen</h3>
+                    <p class="text-indigo-300 text-sm">NYU Shanghai, NYU</p>
+                </a>
+                <a href="https://mgordon.me/" class="glass-card rounded-xl p-6 flex flex-col items-center text-center transition-all duration-300 hover:scale-105 hover:bg-slate-700/70 block no-underline" target="_blank">
+                    <img class="w-32 h-32 rounded-full mb-4 border-4 border-slate-600 object-cover" src="src/assets/images/mitchell.png" alt="Headshot of Mitchell Gordon">
+                    <h3 class="text-xl font-bold text-white mb-1">Mitchell Gordon</h3>
+                    <p class="text-indigo-300 text-sm">MIT, OpenAI</p>
+                </a>
+                <a href="https://kal.ai/" class="glass-card rounded-xl p-6 flex flex-col items-center text-center transition-all duration-300 hover:scale-105 hover:bg-slate-700/70 block no-underline" target="_blank">
+                    <img class="w-32 h-32 rounded-full mb-4 border-4 border-slate-600 object-cover" src="src/assets/images/adam.png" alt="Headshot of Adam Kalai">
+                    <h3 class="text-xl font-bold text-white mb-1">Adam Kalai</h3>
+                    <p class="text-indigo-300 text-sm">OpenAI</p>
+                </a>
+                <a href="https://yoshuabengio.org/" class="glass-card rounded-xl p-6 flex flex-col items-center text-center transition-all duration-300 hover:scale-105 hover:bg-slate-700/70 block no-underline" target="_blank">
+                    <img class="w-32 h-32 rounded-full mb-4 border-4 border-slate-600 object-cover" src="src/assets/images/yoshua.png" alt="Headshot of Yoshua Bengio">
+                    <h3 class="text-xl font-bold text-white mb-1">Yoshua Bengio</h3>
+                    <p class="text-indigo-300 text-sm">Mila & Université de Montréal</p>
+                </a>
+            </div>
+        </section>
+
+
+        <!-- Panelists Section -->
+        <section id="panelists" class="mb-16 md:mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-10">
+                Panelists
+            </h2>
+            <!-- 
+                Note: The grid is set to 5 columns on large screens.
+                The `justify-center` on the grid wrapper helps center the items 
+                if there are fewer than 5 (e.g., on medium screens).
+            -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-center">
+                <!-- Panelist data is populated here -->
+                <a href="https://yoshuabengio.org/" class="glass-card rounded-xl p-6 flex flex-col items-center text-center transition-all duration-300 hover:scale-105 hover:bg-slate-700/70 block no-underline" target="_blank">
+                    <img class="w-32 h-32 rounded-full mb-4 border-4 border-slate-600 object-cover" src="src/assets/images/yoshua.png" alt="Headshot of Yoshua Bengio">
+                    <h3 class="text-xl font-bold text-white mb-1">Yoshua Bengio</h3>
+                    <p class="text-indigo-300 text-sm">Mila & Université de Montréal</p>
+                </a>
+                <a href="https://dawnsong.io/" class="glass-card rounded-xl p-6 flex flex-col items-center text-center transition-all duration-300 hover:scale-105 hover:bg-slate-700/70 block no-underline" target="_blank">
+                    <img class="w-32 h-32 rounded-full mb-4 border-4 border-slate-600 object-cover" src="src/assets/images/dawn.png" alt="Headshot of Dawn Song">
+                    <h3 class="text-xl font-bold text-white mb-1">Dawn Song</h3>
+                    <p class="text-indigo-300 text-sm">UC Berkeley</p>
+                </a>
+                <a href="http://eegilbert.org/" class="glass-card rounded-xl p-6 flex flex-col items-center text-center transition-all duration-300 hover:scale-105 hover:bg-slate-700/70 block no-underline" target="_blank">
+                    <img class="w-32 h-32 rounded-full mb-4 border-4 border-slate-600 object-cover" src="src/assets/images/eric.png" alt="Headshot of Eric Gilbert">
+                    <h3 class="text-xl font-bold text-white mb-1">Eric Gilbert</h3>
+                    <p class="text-indigo-300 text-sm">UMich</p>
+                </a>
+                <a href="https://mbzuai.ac.ae/study/faculty/monojit-choudhury/" class="glass-card rounded-xl p-6 flex flex-col items-center text-center transition-all duration-300 hover:scale-105 hover:bg-slate-700/70 block no-underline" target="_blank">
+                    <img class="w-32 h-32 rounded-full mb-4 border-4 border-slate-600 object-cover" src="src/assets/images/monojit.png" alt="Headshot of Monojit Choudhury">
+                    <h3 class="text-xl font-bold text-white mb-1">Monojit Choudhury</h3>
+                    <p class="text-indigo-300 text-sm">MBZUAI</p>
+                </a>
+                <a href="https://www.aisi.gov.uk/people/hannah-kirk" class="glass-card rounded-xl p-6 flex flex-col items-center text-center transition-all duration-300 hover:scale-105 hover:bg-slate-700/70 block no-underline" target="_blank">
+                    <img class="w-32 h-32 rounded-full mb-4 border-4 border-slate-600 object-cover" src="src/assets/images/hannah.png" alt="Headshot of Hannah Kirk">
+                    <h3 class="text-xl font-bold text-white mb-1">Hannah Kirk</h3>
+                    <p class="text-indigo-300 text-sm">UK AI Security Institute</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section id="cta" class="text-center">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">
+                Check Details & Join Us
+            </h2>
+            <p class="text-lg text-gray-300 mb-8 max-w-xl mx-auto">
+                Don't miss this in-depth tutorial on the future of AI alignment.
+            </p>
+            <a href="https://neurips.cc/virtual/2025/loc/san-diego/109592" class="inline-block bg-indigo-600 text-white text-lg font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-indigo-500 transition-all duration-300 transform hover:-translate-y-0.5" target="_blank">
+                Learn More & Register
+            </a>
+        </section>
     </div>
-  </body>
+
+    <!-- Footer -->
+    <footer class="text-center py-10 mt-12 border-t border-slate-700">
+        <p class="text-gray-400">&copy; 2025 NeurIPS. All rights reserved.</p>
+    </footer>
+
+</body>
 </html>

@@ -27,6 +27,10 @@ npm run build
    npm install --save-dev gh-pages
    ```
 
+   ```bash
+   npm list gh-pages
+   ```
+
 2. Ensure your repository is connected to GitHub and you have the necessary permissions.
 
 ### Deployment Steps
